@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 2G Speed Upgrade Prank App 📶
+
+A hilarious mobile web app to prank your friend Anh Tong about upgrading their 2G connection!
+
+## Features
+
+- **Mobile-first design** - Perfect for smartphones
+- **Interactive choices** - "Yes" or "No" buttons with different outcomes
+- **Punishment form** - For those who choose "No" 😈
+- **Collaboration form** - For those who choose "Yes" 🎉
+- **Email notifications** - Sends form data to your email
+
+## How it works
+
+1. **Main page**: Asks Anh Tong if they want to upgrade their 2G speed
+2. **Choose "No"**: Takes them to a punishment page where they must enter their full name
+3. **Choose "Yes"**: Shows a collaboration form with detailed information
+4. **Email notifications**: All form submissions are sent to `phathduong96@gmail.com`
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Open [http://localhost:3000](http://localhost:3000)** in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setting up Email Functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Currently, the app logs email data to the console. To enable real email sending:
 
-## Learn More
+### Option 1: EmailJS (Recommended for client-side)
+1. Sign up at [EmailJS](https://www.emailjs.com/)
+2. Create a service and template
+3. Update the credentials in `lib/email.ts`:
+   ```typescript
+   const EMAIL_SERVICE_ID = 'your_service_id';
+   const EMAIL_TEMPLATE_ID = 'your_template_id';
+   const EMAIL_PUBLIC_KEY = 'your_public_key';
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+### Option 2: Server-side Email
+- Use services like SendGrid, Nodemailer, or Resend
+- Update the API route in `app/api/send-email/route.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js 15** - React framework with App Router
+- **Tailwind CSS v4** - For styling
+- **TypeScript** - Type safety
+- **EmailJS** - Email sending (optional)
 
-## Deploy on Vercel
+## Mobile Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Responsive design for all screen sizes
+- Touch-friendly buttons (44px minimum)
+- Smooth animations and transitions
+- Gradient background for visual appeal
+- Large, readable typography
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deploy easily on Vercel:
+1. Push to GitHub
+2. Connect to Vercel
+3. Deploy automatically
+
+## Fun Factor 🎯
+
+This app is designed to be a harmless prank that will definitely get some laughs! The "punishment" and "collaboration" themes add humor while collecting the information you need.
+
+---
+
+*Made with ❤️ and lots of laughs for Anh Tong's 2G upgrade journey!*
